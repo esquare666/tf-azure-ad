@@ -20,12 +20,6 @@ variable "ad_groups" {
 
 variable "ad_home_group_users" {
   description = "Active Directory Home Group users"
-  type        = list(string)
-  default     = ["home", "primaryschool", "kindy"]
-}
-
-variable "ad_home_group_users" {
-  description = "Active Directory Home Group users"
   type = list(object({
     uid = string
     dname = string
