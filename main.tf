@@ -3,6 +3,6 @@ provider "azuread" {
 }
 
 resource "azuread_group" "main" {
-  count = length(var.subnet_app)
-  name  = var.subnet_app[count.index]
+  count = length(var.ad_groups)
+  name  = var.ad_groups[count.index]
 }
