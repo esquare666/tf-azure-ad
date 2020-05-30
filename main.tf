@@ -38,5 +38,11 @@ resource "azuread_group_member" "home" {
 resource "azuread_group_member" "primaryschool" {
   count = length(var.ad_primaryschool_group_members)
   group_object_id   = data.azuread_group.primaryschool.id
-  member_object_id  = "${var.ad_primaryschool_group_members[count.index]}.objectId"
+  member_object_id  = "${var.ad_primaryschool_group_members[count.index]}".objectId
+}
+
+resource "azuread_group_member" "kindy" {
+  count = length(var.ad_kindy_group_members)
+  group_object_id   = data.azuread_group.kindy.id
+  member_object_id  = "${var.ad_kindy_group_members[count.index]}".id
 }
