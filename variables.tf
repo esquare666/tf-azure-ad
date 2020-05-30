@@ -3,8 +3,19 @@ variable "prefix" {
   default = "learnaz104"
 }
 
+variable "usage_location" {
+  type    = string
+  default = "NZ"
+}
+
 variable "ad_groups" {
   description = "Active Directory Groups"
+  type        = list(string)
+  default     = ["home", "primaryschool", "kindy"]
+}
+
+variable "ad_home_group_users" {
+  description = "Active Directory Home Group"
   type        = list(string)
   default     = ["home", "primaryschool", "kindy"]
 }
