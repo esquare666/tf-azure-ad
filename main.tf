@@ -32,7 +32,7 @@ data "azuread_group" "kindy" {
 resource "azuread_group_member" "home" {
   count = length(var.ad_home_group_members)
   group_object_id   = data.azuread_group.home.id
-  member_object_id  = "${var.ad_home_group_members[count.index]}.id"
+  member_object_id  = azuread_user.main[count.index].id
 }
 
 resource "azuread_group_member" "primaryschool" {
