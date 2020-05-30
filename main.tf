@@ -16,3 +16,33 @@ resource "azuread_group" "main" {
   count = length(var.ad_groups)
   name  = var.ad_groups[count.index]
 }
+
+data "azuread_group" "home" {
+  name = "home"
+}
+
+data "azuread_group" "primaryschool" {
+  name = "primaryschool"
+}
+
+data "azuread_group" "kindy" {
+  name = "kindy"
+}
+
+resource "azuread_group_member" "main" {
+  count = length(var.ad_home_group_members)
+  group_object_id   = "${data.azuread_group.home.id}"
+  member_object_id  = var.ad_home_group_members[count.index]
+}
+
+resource "azuread_group_member" "main" {
+  count = length(var.ad_primaryschool_group_members)
+  group_object_id   = "${data.azuread_group.primaryschool.id}"
+  member_object_id  = var.ad_primaryschool_group_members[count.index]
+}
+
+resource "azuread_group_member" "main" {
+  count = length(var.ad_kindy_group_members)
+  group_object_id   = "${data.azuread_group.home.id}"
+  member_object_id  = var.ad_kindy_group_members[count.index]
+}
