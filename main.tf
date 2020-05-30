@@ -2,7 +2,9 @@ provider "azuread" {
   version = "~> 0.7.0"
 }
 
-resource "azuread_group" "main" {
-  count = length(var.ad_groups)
-  name  = var.ad_groups[count.index]
+resource "azuread_user" "home" {
+  user_principal_name = "home"
+  display_name        = "Elan Home"
+  password            = "Password@1234"
+  usage_location      = var.usage_location
 }
