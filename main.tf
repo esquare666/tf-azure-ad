@@ -25,9 +25,9 @@ data "azuread_group" "primaryschool" {
   name = "primaryschool"
 }
 
-data "azuread_group" "kindy" {
-  name = "kindy"
-}
+#data "azuread_group" "kindy" {
+#  name = "kindy"
+#}
 
 resource "azuread_group_member" "home" {
   count = length(var.ad_home_group_members)
