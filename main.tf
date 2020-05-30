@@ -43,6 +43,6 @@ resource "azuread_group_member" "primaryschool" {
 
 resource "azuread_group_member" "kindy" {
   count = length(var.ad_kindy_group_members)
-  group_object_id   = "data.azuread_group.kindy.id
+  group_object_id   = data.azuread_group.kindy.id
   member_object_id  = var.ad_kindy_group_members[count.index].id
 }
