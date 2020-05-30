@@ -17,11 +17,6 @@ variable "ad_groups" {
   type        = list(string)
 }
 
-variable "ad_home_group_members" {
-  description = "Active Directory Home Group Members"
-  type        = list(string)
-}
-
 variable "ad_users" {
   description = "Active Directory users"
   type = list(object({
@@ -30,6 +25,20 @@ variable "ad_users" {
   }))
 }
 
+variable "ad_home_group_members" {
+  description = "Active Directory Home Group Members"
+  type        = list(string)
+}
+
+variable "ad_kindy_group_members" {
+  description = "Active Directory Kindy Group Members"
+  type        = list(string)
+}
+
+variable "ad_primaryschool_group_members" {
+  description = "Active Directory Primary School Group Members"
+  type        = list(string)
+}
 variable "tag_user_name" {
   type = string
   default = "Elayaraja Kathirvel"
