@@ -12,3 +12,5 @@ ad_users = [
    dname = "Elan PrimarySchool"
 }
 ]
+
+ad_groups = ["home", "primaryschool", "kindy"]
