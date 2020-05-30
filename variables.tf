@@ -15,10 +15,10 @@ variable "password" {
 variable "ad_groups" {
   description = "Active Directory Groups"
   type        = list(string)
-  default     = ["home", "primaryschool", "kindy"]
+  default     = ["home", "work"]
 }
 
-variable "ad_home_group_users" {
+variable "ad_users" {
   description = "Active Directory Home Group users"
   type = list(object({
     uid = string
