@@ -7,5 +7,6 @@ resource "azuread_user" "main" {
   display_name        = "Elan Home"
   #Var is created in env. export TF_VAR_password="wjwgergnerjgnerjkg@fgjner43"
   password            = var.password
+  force_password_change = false
   usage_location      = var.usage_location
 }
