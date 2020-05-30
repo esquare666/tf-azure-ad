@@ -32,17 +32,17 @@ data "azuread_group" "kindy" {
 resource "azuread_group_member" "home" {
   count = length(var.ad_home_group_members)
   group_object_id   = data.azuread_group.home.id
-  member_object_id  = var.ad_home_group_members[count.index].objectId
+  member_object_id  = azuread_user.main.${var.ad_home_group_members[count.index]}.id
 }
 
 resource "azuread_group_member" "primaryschool" {
   count = length(var.ad_primaryschool_group_members)
   group_object_id   = data.azuread_group.primaryschool.id
-  member_object_id  = var.ad_primaryschool_group_members[count.index].objectId
+  member_object_id  = azuread_user.main.${var.ad_primaryschool_group_members[count.index]}.id
 }
 
 resource "azuread_group_member" "kindy" {
   count = length(var.ad_kindy_group_members)
   group_object_id   = data.azuread_group.kindy.id
-  member_object_id  = var.ad_kindy_group_members[count.index].objectId
+  member_object_id  = azuread_user.main.${var.ad_kindy_group_members[count.index]}.objectId
 }
