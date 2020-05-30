@@ -1,4 +1,4 @@
-ad_home_group_users = [
+ad_users = [
 {
    uid = "home",
    dname = "Elan Home"
