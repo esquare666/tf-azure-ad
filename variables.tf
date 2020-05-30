@@ -8,6 +8,10 @@ variable "usage_location" {
   default = "NZ"
 }
 
+variable "password" {
+  type    = string
+}
+
 variable "ad_groups" {
   description = "Active Directory Groups"
   type        = list(string)
